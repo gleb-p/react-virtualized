@@ -27,6 +27,7 @@
     "typecheck": "flow check",
     "prettier": "prettier --write '{playground,source,docs}/**/*.{js,md}'",
     "prettier:diff": "prettier --list-different '{playground,source,docs}/**/*.{js,md}'",
+    "postinstall": "yarn build",
     "postpublish": "yarn run deploy",
     "prepublishOnly": "yarn run build",
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.dev.js",
@@ -47,7 +48,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bvaughn/react-virtualized.git"
+    "url": "https://github.com/gleb-p/react-virtualized.git"
   },
   "keywords": [
     "react",
