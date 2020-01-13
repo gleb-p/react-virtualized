@@ -14,7 +14,7 @@ if (env === 'commonjs' || env === 'es') {
     plugins: [
       '@babel/plugin-transform-runtime',
       '@babel/plugin-proposal-class-properties',
-      ['flow-react-proptypes', {deadCode: true, useESModules: true}],
+      ['flow-react-proptypes', {deadCode: true, useESModules: false}],
       ['transform-react-remove-prop-types', {mode: 'wrap'}],
     ],
     presets: [
