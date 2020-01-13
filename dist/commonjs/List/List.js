@@ -1,8 +1,8 @@
 'use strict';
 
-var _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
-
 var _interopRequireWildcard = require('@babel/runtime/helpers/interopRequireWildcard');
+
+var _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
 
 Object.defineProperty(exports, '__esModule', {
   value: true,
@@ -47,406 +47,272 @@ var React = _interopRequireWildcard(require('react'));
 
 var _clsx = _interopRequireDefault(require('clsx'));
 
-var _class, _temp;
-
 var List =
-  ((_temp = _class =
-    /*#__PURE__*/
-    (function(_React$PureComponent) {
-      (0, _inherits2['default'])(List, _React$PureComponent);
+  /*#__PURE__*/
+  (function(_React$PureComponent) {
+    (0, _inherits2['default'])(List, _React$PureComponent);
 
-      function List() {
-        var _getPrototypeOf2;
+    function List() {
+      var _getPrototypeOf2;
 
-        var _this;
+      var _this;
 
-        (0, _classCallCheck2['default'])(this, List);
+      (0, _classCallCheck2['default'])(this, List);
 
-        for (
-          var _len = arguments.length, args = new Array(_len), _key = 0;
-          _key < _len;
-          _key++
-        ) {
-          args[_key] = arguments[_key];
-        }
-
-        _this = (0, _possibleConstructorReturn2['default'])(
-          this,
-          (_getPrototypeOf2 = (0, _getPrototypeOf3['default'])(
-            List,
-          )).call.apply(_getPrototypeOf2, [this].concat(args)),
-        );
-        (0, _defineProperty2['default'])(
-          (0, _assertThisInitialized2['default'])(_this),
-          'Grid',
-          void 0,
-        );
-        (0, _defineProperty2['default'])(
-          (0, _assertThisInitialized2['default'])(_this),
-          '_cellRenderer',
-          function(_ref) {
-            var parent = _ref.parent,
-              rowIndex = _ref.rowIndex,
-              style = _ref.style,
-              isScrolling = _ref.isScrolling,
-              isVisible = _ref.isVisible,
-              key = _ref.key;
-            var rowRenderer = _this.props.rowRenderer; // TRICKY The style object is sometimes cached by Grid.
-            // This prevents new style objects from bypassing shallowCompare().
-            // However as of React 16, style props are auto-frozen (at least in dev mode)
-            // Check to make sure we can still modify the style before proceeding.
-            // https://github.com/facebook/react/commit/977357765b44af8ff0cfea327866861073095c12#commitcomment-20648713
-
-            var widthDescriptor = Object.getOwnPropertyDescriptor(
-              style,
-              'width',
-            );
-
-            if (widthDescriptor && widthDescriptor.writable) {
-              // By default, List cells should be 100% width.
-              // This prevents them from flowing under a scrollbar (if present).
-              style.width = '100%';
-            }
-
-            return rowRenderer({
-              index: rowIndex,
-              style: style,
-              isScrolling: isScrolling,
-              isVisible: isVisible,
-              key: key,
-              parent: parent,
-            });
-          },
-        );
-        (0, _defineProperty2['default'])(
-          (0, _assertThisInitialized2['default'])(_this),
-          '_setRef',
-          function(ref) {
-            _this.Grid = ref;
-          },
-        );
-        (0, _defineProperty2['default'])(
-          (0, _assertThisInitialized2['default'])(_this),
-          '_onScroll',
-          function(_ref2) {
-            var clientHeight = _ref2.clientHeight,
-              scrollHeight = _ref2.scrollHeight,
-              scrollTop = _ref2.scrollTop;
-            var onScroll = _this.props.onScroll;
-            onScroll({
-              clientHeight: clientHeight,
-              scrollHeight: scrollHeight,
-              scrollTop: scrollTop,
-            });
-          },
-        );
-        (0, _defineProperty2['default'])(
-          (0, _assertThisInitialized2['default'])(_this),
-          '_onSectionRendered',
-          function(_ref3) {
-            var rowOverscanStartIndex = _ref3.rowOverscanStartIndex,
-              rowOverscanStopIndex = _ref3.rowOverscanStopIndex,
-              rowStartIndex = _ref3.rowStartIndex,
-              rowStopIndex = _ref3.rowStopIndex;
-            var onRowsRendered = _this.props.onRowsRendered;
-            onRowsRendered({
-              overscanStartIndex: rowOverscanStartIndex,
-              overscanStopIndex: rowOverscanStopIndex,
-              startIndex: rowStartIndex,
-              stopIndex: rowStopIndex,
-            });
-          },
-        );
-        return _this;
+      for (
+        var _len = arguments.length, args = new Array(_len), _key = 0;
+        _key < _len;
+        _key++
+      ) {
+        args[_key] = arguments[_key];
       }
 
-      (0, _createClass2['default'])(List, [
-        {
-          key: 'forceUpdateGrid',
-          value: function forceUpdateGrid() {
-            if (this.Grid) {
-              this.Grid.forceUpdate();
-            }
-          },
-          /** See Grid#getOffsetForCell */
+      _this = (0, _possibleConstructorReturn2['default'])(
+        this,
+        (_getPrototypeOf2 = (0, _getPrototypeOf3['default'])(List)).call.apply(
+          _getPrototypeOf2,
+          [this].concat(args),
+        ),
+      );
+      (0, _defineProperty2['default'])(
+        (0, _assertThisInitialized2['default'])(_this),
+        'Grid',
+        void 0,
+      );
+      (0, _defineProperty2['default'])(
+        (0, _assertThisInitialized2['default'])(_this),
+        '_cellRenderer',
+        function(_ref) {
+          var parent = _ref.parent,
+            rowIndex = _ref.rowIndex,
+            style = _ref.style,
+            isScrolling = _ref.isScrolling,
+            isVisible = _ref.isVisible,
+            key = _ref.key;
+          var rowRenderer = _this.props.rowRenderer; // TRICKY The style object is sometimes cached by Grid.
+          // This prevents new style objects from bypassing shallowCompare().
+          // However as of React 16, style props are auto-frozen (at least in dev mode)
+          // Check to make sure we can still modify the style before proceeding.
+          // https://github.com/facebook/react/commit/977357765b44af8ff0cfea327866861073095c12#commitcomment-20648713
+
+          var widthDescriptor = Object.getOwnPropertyDescriptor(style, 'width');
+
+          if (widthDescriptor && widthDescriptor.writable) {
+            // By default, List cells should be 100% width.
+            // This prevents them from flowing under a scrollbar (if present).
+            style.width = '100%';
+          }
+
+          return rowRenderer({
+            index: rowIndex,
+            style: style,
+            isScrolling: isScrolling,
+            isVisible: isVisible,
+            key: key,
+            parent: parent,
+          });
         },
-        {
-          key: 'getOffsetForRow',
-          value: function getOffsetForRow(_ref4) {
-            var alignment = _ref4.alignment,
-              index = _ref4.index;
-
-            if (this.Grid) {
-              var _this$Grid$getOffsetF = this.Grid.getOffsetForCell({
-                  alignment: alignment,
-                  rowIndex: index,
-                  columnIndex: 0,
-                }),
-                scrollTop = _this$Grid$getOffsetF.scrollTop;
-
-              return scrollTop;
-            }
-
-            return 0;
-          },
-          /** CellMeasurer compatibility */
+      );
+      (0, _defineProperty2['default'])(
+        (0, _assertThisInitialized2['default'])(_this),
+        '_setRef',
+        function(ref) {
+          _this.Grid = ref;
         },
-        {
-          key: 'invalidateCellSizeAfterRender',
-          value: function invalidateCellSizeAfterRender(_ref5) {
-            var columnIndex = _ref5.columnIndex,
-              rowIndex = _ref5.rowIndex;
-
-            if (this.Grid) {
-              this.Grid.invalidateCellSizeAfterRender({
-                rowIndex: rowIndex,
-                columnIndex: columnIndex,
-              });
-            }
-          },
-          /** See Grid#measureAllCells */
+      );
+      (0, _defineProperty2['default'])(
+        (0, _assertThisInitialized2['default'])(_this),
+        '_onScroll',
+        function(_ref2) {
+          var clientHeight = _ref2.clientHeight,
+            scrollHeight = _ref2.scrollHeight,
+            scrollTop = _ref2.scrollTop;
+          var onScroll = _this.props.onScroll;
+          onScroll({
+            clientHeight: clientHeight,
+            scrollHeight: scrollHeight,
+            scrollTop: scrollTop,
+          });
         },
-        {
-          key: 'measureAllRows',
-          value: function measureAllRows() {
-            if (this.Grid) {
-              this.Grid.measureAllCells();
-            }
-          },
-          /** CellMeasurer compatibility */
+      );
+      (0, _defineProperty2['default'])(
+        (0, _assertThisInitialized2['default'])(_this),
+        '_onSectionRendered',
+        function(_ref3) {
+          var rowOverscanStartIndex = _ref3.rowOverscanStartIndex,
+            rowOverscanStopIndex = _ref3.rowOverscanStopIndex,
+            rowStartIndex = _ref3.rowStartIndex,
+            rowStopIndex = _ref3.rowStopIndex;
+          var onRowsRendered = _this.props.onRowsRendered;
+          onRowsRendered({
+            overscanStartIndex: rowOverscanStartIndex,
+            overscanStopIndex: rowOverscanStopIndex,
+            startIndex: rowStartIndex,
+            stopIndex: rowStopIndex,
+          });
         },
-        {
-          key: 'recomputeGridSize',
-          value: function recomputeGridSize() {
-            var _ref6 =
-                arguments.length > 0 && arguments[0] !== undefined
-                  ? arguments[0]
-                  : {},
-              _ref6$columnIndex = _ref6.columnIndex,
-              columnIndex =
-                _ref6$columnIndex === void 0 ? 0 : _ref6$columnIndex,
-              _ref6$rowIndex = _ref6.rowIndex,
-              rowIndex = _ref6$rowIndex === void 0 ? 0 : _ref6$rowIndex;
+      );
+      return _this;
+    }
 
-            if (this.Grid) {
-              this.Grid.recomputeGridSize({
-                rowIndex: rowIndex,
-                columnIndex: columnIndex,
-              });
-            }
-          },
-          /** See Grid#recomputeGridSize */
+    (0, _createClass2['default'])(List, [
+      {
+        key: 'forceUpdateGrid',
+        value: function forceUpdateGrid() {
+          if (this.Grid) {
+            this.Grid.forceUpdate();
+          }
         },
-        {
-          key: 'recomputeRowHeights',
-          value: function recomputeRowHeights() {
-            var index =
-              arguments.length > 0 && arguments[0] !== undefined
-                ? arguments[0]
-                : 0;
+        /** See Grid#getOffsetForCell */
+      },
+      {
+        key: 'getOffsetForRow',
+        value: function getOffsetForRow(_ref4) {
+          var alignment = _ref4.alignment,
+            index = _ref4.index;
 
-            if (this.Grid) {
-              this.Grid.recomputeGridSize({
+          if (this.Grid) {
+            var _this$Grid$getOffsetF = this.Grid.getOffsetForCell({
+                alignment: alignment,
                 rowIndex: index,
                 columnIndex: 0,
-              });
-            }
-          },
-          /** See Grid#scrollToPosition */
-        },
-        {
-          key: 'scrollToPosition',
-          value: function scrollToPosition() {
-            var scrollTop =
-              arguments.length > 0 && arguments[0] !== undefined
-                ? arguments[0]
-                : 0;
-
-            if (this.Grid) {
-              this.Grid.scrollToPosition({
-                scrollTop: scrollTop,
-              });
-            }
-          },
-          /** See Grid#scrollToCell */
-        },
-        {
-          key: 'scrollToRow',
-          value: function scrollToRow() {
-            var index =
-              arguments.length > 0 && arguments[0] !== undefined
-                ? arguments[0]
-                : 0;
-
-            if (this.Grid) {
-              this.Grid.scrollToCell({
-                columnIndex: 0,
-                rowIndex: index,
-              });
-            }
-          },
-        },
-        {
-          key: 'render',
-          value: function render() {
-            var _this$props = this.props,
-              className = _this$props.className,
-              noRowsRenderer = _this$props.noRowsRenderer,
-              scrollToIndex = _this$props.scrollToIndex,
-              width = _this$props.width;
-            var classNames = (0, _clsx['default'])(
-              'ReactVirtualized__List',
-              className,
-            );
-            return React.createElement(
-              _Grid['default'],
-              (0, _extends2['default'])({}, this.props, {
-                autoContainerWidth: true,
-                cellRenderer: this._cellRenderer,
-                className: classNames,
-                columnWidth: width,
-                columnCount: 1,
-                noContentRenderer: noRowsRenderer,
-                onScroll: this._onScroll,
-                onSectionRendered: this._onSectionRendered,
-                ref: this._setRef,
-                scrollToRow: scrollToIndex,
               }),
-            );
-          },
+              scrollTop = _this$Grid$getOffsetF.scrollTop;
+
+            return scrollTop;
+          }
+
+          return 0;
         },
-      ]);
-      return List;
-    })(React.PureComponent)),
-  (0, _defineProperty2['default'])(
-    _class,
-    'propTypes',
-    process.env.NODE_ENV === 'production'
-      ? null
-      : {
-          '"aria-label"': require('prop-types').string,
+        /** CellMeasurer compatibility */
+      },
+      {
+        key: 'invalidateCellSizeAfterRender',
+        value: function invalidateCellSizeAfterRender(_ref5) {
+          var columnIndex = _ref5.columnIndex,
+            rowIndex = _ref5.rowIndex;
 
-          /**
-           * Removes fixed height from the scrollingContainer so that the total height
-           * of rows can stretch the window. Intended for use with WindowScroller
-           */
-          autoHeight: require('prop-types').bool.isRequired,
-
-          /** Optional CSS class name */
-          className: require('prop-types').string,
-
-          /**
-           * Used to estimate the total height of a List before all of its rows have actually been measured.
-           * The estimated total height is adjusted as rows are rendered.
-           */
-          estimatedRowSize: require('prop-types').number.isRequired,
-
-          /** Height constraint for list (determines how many actual rows are rendered) */
-          height: require('prop-types').number.isRequired,
-
-          /** Optional renderer to be used in place of rows when rowCount is 0 */
-          noRowsRenderer: function noRowsRenderer() {
-            return (typeof require('../Grid')
-              .bpfrpt_proptype_NoContentRenderer === 'function'
-              ? require('../Grid').bpfrpt_proptype_NoContentRenderer.isRequired
-                ? require('../Grid').bpfrpt_proptype_NoContentRenderer
-                    .isRequired
-                : require('../Grid').bpfrpt_proptype_NoContentRenderer
-              : require('prop-types').shape(
-                  require('../Grid').bpfrpt_proptype_NoContentRenderer,
-                ).isRequired
-            ).apply(this, arguments);
-          },
-
-          /** Callback invoked with information about the slice of rows that were just rendered.  */
-          onRowsRendered: require('prop-types').func.isRequired,
-
-          /**
-           * Callback invoked whenever the scroll offset changes within the inner scrollable region.
-           * This callback can be used to sync scrolling between lists, tables, or grids.
-           */
-          onScroll: require('prop-types').func.isRequired,
-
-          /** See Grid#overscanIndicesGetter */
-          overscanIndicesGetter: function overscanIndicesGetter() {
-            return (typeof require('../Grid')
-              .bpfrpt_proptype_OverscanIndicesGetter === 'function'
-              ? require('../Grid').bpfrpt_proptype_OverscanIndicesGetter
-                  .isRequired
-                ? require('../Grid').bpfrpt_proptype_OverscanIndicesGetter
-                    .isRequired
-                : require('../Grid').bpfrpt_proptype_OverscanIndicesGetter
-              : require('prop-types').shape(
-                  require('../Grid').bpfrpt_proptype_OverscanIndicesGetter,
-                ).isRequired
-            ).apply(this, arguments);
-          },
-
-          /**
-           * Number of rows to render above/below the visible bounds of the list.
-           * These rows can help for smoother scrolling on touch devices.
-           */
-          overscanRowCount: require('prop-types').number.isRequired,
-
-          /** Either a fixed row height (number) or a function that returns the height of a row given its index.  */
-          rowHeight: function rowHeight() {
-            return (typeof require('../Grid').bpfrpt_proptype_CellSize ===
-            'function'
-              ? require('../Grid').bpfrpt_proptype_CellSize.isRequired
-                ? require('../Grid').bpfrpt_proptype_CellSize.isRequired
-                : require('../Grid').bpfrpt_proptype_CellSize
-              : require('prop-types').shape(
-                  require('../Grid').bpfrpt_proptype_CellSize,
-                ).isRequired
-            ).apply(this, arguments);
-          },
-
-          /** Responsible for rendering a row given an index; ({ index: number }): node */
-          rowRenderer: function rowRenderer() {
-            return (typeof require('./types').bpfrpt_proptype_RowRenderer ===
-            'function'
-              ? require('./types').bpfrpt_proptype_RowRenderer.isRequired
-                ? require('./types').bpfrpt_proptype_RowRenderer.isRequired
-                : require('./types').bpfrpt_proptype_RowRenderer
-              : require('prop-types').shape(
-                  require('./types').bpfrpt_proptype_RowRenderer,
-                ).isRequired
-            ).apply(this, arguments);
-          },
-
-          /** Number of rows in list. */
-          rowCount: require('prop-types').number.isRequired,
-
-          /** See Grid#scrollToAlignment */
-          scrollToAlignment: function scrollToAlignment() {
-            return (typeof require('../Grid').bpfrpt_proptype_Alignment ===
-            'function'
-              ? require('../Grid').bpfrpt_proptype_Alignment.isRequired
-                ? require('../Grid').bpfrpt_proptype_Alignment.isRequired
-                : require('../Grid').bpfrpt_proptype_Alignment
-              : require('prop-types').shape(
-                  require('../Grid').bpfrpt_proptype_Alignment,
-                ).isRequired
-            ).apply(this, arguments);
-          },
-
-          /** Row index to ensure visible (by forcefully scrolling if necessary) */
-          scrollToIndex: require('prop-types').number.isRequired,
-
-          /** Vertical offset. */
-          scrollTop: require('prop-types').number,
-
-          /** Optional inline style */
-          style: require('prop-types').object.isRequired,
-
-          /** Tab index for focus */
-          tabIndex: require('prop-types').number,
-
-          /** Width of list */
-          width: require('prop-types').number.isRequired,
+          if (this.Grid) {
+            this.Grid.invalidateCellSizeAfterRender({
+              rowIndex: rowIndex,
+              columnIndex: columnIndex,
+            });
+          }
         },
-  ),
-  _temp);
+        /** See Grid#measureAllCells */
+      },
+      {
+        key: 'measureAllRows',
+        value: function measureAllRows() {
+          if (this.Grid) {
+            this.Grid.measureAllCells();
+          }
+        },
+        /** CellMeasurer compatibility */
+      },
+      {
+        key: 'recomputeGridSize',
+        value: function recomputeGridSize() {
+          var _ref6 =
+              arguments.length > 0 && arguments[0] !== undefined
+                ? arguments[0]
+                : {},
+            _ref6$columnIndex = _ref6.columnIndex,
+            columnIndex = _ref6$columnIndex === void 0 ? 0 : _ref6$columnIndex,
+            _ref6$rowIndex = _ref6.rowIndex,
+            rowIndex = _ref6$rowIndex === void 0 ? 0 : _ref6$rowIndex;
+
+          if (this.Grid) {
+            this.Grid.recomputeGridSize({
+              rowIndex: rowIndex,
+              columnIndex: columnIndex,
+            });
+          }
+        },
+        /** See Grid#recomputeGridSize */
+      },
+      {
+        key: 'recomputeRowHeights',
+        value: function recomputeRowHeights() {
+          var index =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : 0;
+
+          if (this.Grid) {
+            this.Grid.recomputeGridSize({
+              rowIndex: index,
+              columnIndex: 0,
+            });
+          }
+        },
+        /** See Grid#scrollToPosition */
+      },
+      {
+        key: 'scrollToPosition',
+        value: function scrollToPosition() {
+          var scrollTop =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : 0;
+
+          if (this.Grid) {
+            this.Grid.scrollToPosition({
+              scrollTop: scrollTop,
+            });
+          }
+        },
+        /** See Grid#scrollToCell */
+      },
+      {
+        key: 'scrollToRow',
+        value: function scrollToRow() {
+          var index =
+            arguments.length > 0 && arguments[0] !== undefined
+              ? arguments[0]
+              : 0;
+
+          if (this.Grid) {
+            this.Grid.scrollToCell({
+              columnIndex: 0,
+              rowIndex: index,
+            });
+          }
+        },
+      },
+      {
+        key: 'render',
+        value: function render() {
+          var _this$props = this.props,
+            className = _this$props.className,
+            noRowsRenderer = _this$props.noRowsRenderer,
+            scrollToIndex = _this$props.scrollToIndex,
+            width = _this$props.width;
+          var classNames = (0, _clsx['default'])(
+            'ReactVirtualized__List',
+            className,
+          );
+          return React.createElement(
+            _Grid['default'],
+            (0, _extends2['default'])({}, this.props, {
+              autoContainerWidth: true,
+              cellRenderer: this._cellRenderer,
+              className: classNames,
+              columnWidth: width,
+              columnCount: 1,
+              noContentRenderer: noRowsRenderer,
+              onScroll: this._onScroll,
+              onSectionRendered: this._onSectionRendered,
+              ref: this._setRef,
+              scrollToRow: scrollToIndex,
+            }),
+          );
+        },
+      },
+    ]);
+    return List;
+  })(React.PureComponent);
+
 exports['default'] = List;
 (0, _defineProperty2['default'])(List, 'defaultProps', {
   autoHeight: false,

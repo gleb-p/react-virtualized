@@ -108,11 +108,3 @@ var DynamicHeightList =
   })(React.PureComponent);
 
 export {DynamicHeightList as default};
-DynamicHeightList.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        getClassName: PropTypes.func.isRequired,
-        list: PropTypes.instanceOf(Immutable.List).isRequired,
-        width: PropTypes.number.isRequired,
-      }
-    : {};

@@ -114,14 +114,3 @@ var ScrollSync =
   })(React.PureComponent);
 
 exports['default'] = ScrollSync;
-ScrollSync.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        /**
-         * Function responsible for rendering 2 or more virtualized components.
-         * This function should implement the following signature:
-         * ({ onScroll, scrollLeft, scrollTop }) => PropTypes.element
-         */
-        children: _propTypes['default'].func.isRequired,
-      }
-    : {};

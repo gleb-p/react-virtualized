@@ -142,12 +142,3 @@ var DynamicHeightGrid =
   })(React.PureComponent);
 
 export {DynamicHeightGrid as default};
-DynamicHeightGrid.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        getClassName: PropTypes.func.isRequired,
-        getContent: PropTypes.func.isRequired,
-        list: PropTypes.instanceOf(Immutable.List).isRequired,
-        width: PropTypes.number.isRequired,
-      }
-    : {};

@@ -106,11 +106,3 @@ function defaultRowRenderer(_ref) {
     columns,
   );
 }
-
-defaultRowRenderer.propTypes =
-  process.env.NODE_ENV === 'production'
-    ? null
-    : require('./types').bpfrpt_proptype_RowRendererParams ===
-      require('prop-types').any
-    ? {}
-    : require('./types').bpfrpt_proptype_RowRendererParams;

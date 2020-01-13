@@ -1,14 +1,4 @@
-var bpfrpt_proptype_AnimationTimeoutId =
-  process.env.NODE_ENV === 'production'
-    ? null
-    : {
-        id: require('prop-types').number.isRequired,
-      };
-if (!(process.env.NODE_ENV === 'production') && typeof exports !== 'undefined')
-  Object.defineProperty(exports, 'bpfrpt_proptype_AnimationTimeoutId', {
-    value: bpfrpt_proptype_AnimationTimeoutId,
-    configurable: true,
-  });
+//import {caf, raf} from './animationFrame';
 export var cancelAnimationTimeout = function cancelAnimationTimeout(frame) {
   return window.cancelAnimationFrame(frame.id);
 };

@@ -52,13 +52,3 @@ function SortIndicator(_ref) {
     }),
   );
 }
-
-SortIndicator.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        sortDirection: _propTypes['default'].oneOf([
-          _SortDirection['default'].ASC,
-          _SortDirection['default'].DESC,
-        ]),
-      }
-    : {};

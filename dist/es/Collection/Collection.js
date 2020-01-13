@@ -220,44 +220,6 @@ _defineProperty(Collection, 'defaultProps', {
 });
 
 export {Collection as default};
-Collection.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        'aria-label': PropTypes.string,
-
-        /**
-         * Number of cells in Collection.
-         */
-        cellCount: PropTypes.number.isRequired,
-
-        /**
-         * Responsible for rendering a group of cells given their indices.
-         * Should implement the following interface: ({
-         *   cellSizeAndPositionGetter:Function,
-         *   indices: Array<number>,
-         *   cellRenderer: Function
-         * }): Array<PropTypes.node>
-         */
-        cellGroupRenderer: PropTypes.func.isRequired,
-
-        /**
-         * Responsible for rendering a cell given an row and column index.
-         * Should implement the following interface: ({ index: number, key: string, style: object }): PropTypes.element
-         */
-        cellRenderer: PropTypes.func.isRequired,
-
-        /**
-         * Callback responsible for returning size and offset/position information for a given cell (index).
-         * ({ index: number }): { height: number, width: number, x: number, y: number }
-         */
-        cellSizeAndPositionGetter: PropTypes.func.isRequired,
-
-        /**
-         * Optionally override the size of the sections a Collection's cells are split into.
-         */
-        sectionSize: PropTypes.number,
-      }
-    : {};
 
 function defaultCellGroupRenderer(_ref4) {
   var cellCache = _ref4.cellCache,

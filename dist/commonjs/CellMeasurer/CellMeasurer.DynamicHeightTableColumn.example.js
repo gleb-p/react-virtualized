@@ -187,11 +187,3 @@ var DynamicHeightTableColumn =
   })(React.PureComponent);
 
 exports['default'] = DynamicHeightTableColumn;
-DynamicHeightTableColumn.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        list: _propTypes['default'].instanceOf(_immutable['default'].List)
-          .isRequired,
-        width: _propTypes['default'].number.isRequired,
-      }
-    : {};

@@ -134,30 +134,3 @@ var ColumnSizer =
   })(React.PureComponent);
 
 exports['default'] = ColumnSizer;
-ColumnSizer.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        /**
-         * Function responsible for rendering a virtualized Grid.
-         * This function should implement the following signature:
-         * ({ adjustedWidth, getColumnWidth, registerChild }) => PropTypes.element
-         *
-         * The specified :getColumnWidth function should be passed to the Grid's :columnWidth property.
-         * The :registerChild should be passed to the Grid's :ref property.
-         * The :adjustedWidth property is optional; it reflects the lesser of the overall width or the width of all columns.
-         */
-        children: _propTypes['default'].func.isRequired,
-
-        /** Optional maximum allowed column width */
-        columnMaxWidth: _propTypes['default'].number,
-
-        /** Optional minimum allowed column width */
-        columnMinWidth: _propTypes['default'].number,
-
-        /** Number of columns in Grid or Table child */
-        columnCount: _propTypes['default'].number.isRequired,
-
-        /** Width of Grid or Table child */
-        width: _propTypes['default'].number.isRequired,
-      }
-    : {};

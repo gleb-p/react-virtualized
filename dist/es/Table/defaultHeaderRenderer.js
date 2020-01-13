@@ -33,10 +33,3 @@ export default function defaultHeaderRenderer(_ref) {
 
   return children;
 }
-defaultHeaderRenderer.propTypes =
-  process.env.NODE_ENV === 'production'
-    ? null
-    : require('./types').bpfrpt_proptype_HeaderRendererParams ===
-      require('prop-types').any
-    ? {}
-    : require('./types').bpfrpt_proptype_HeaderRendererParams;

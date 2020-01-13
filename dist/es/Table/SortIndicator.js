@@ -35,9 +35,3 @@ export default function SortIndicator(_ref) {
     }),
   );
 }
-SortIndicator.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        sortDirection: PropTypes.oneOf([SortDirection.ASC, SortDirection.DESC]),
-      }
-    : {};

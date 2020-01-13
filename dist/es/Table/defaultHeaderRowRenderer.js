@@ -13,10 +13,3 @@ export default function defaultHeaderRowRenderer(_ref) {
     columns,
   );
 }
-defaultHeaderRowRenderer.propTypes =
-  process.env.NODE_ENV === 'production'
-    ? null
-    : require('./types').bpfrpt_proptype_HeaderRowRendererParams ===
-      require('prop-types').any
-    ? {}
-    : require('./types').bpfrpt_proptype_HeaderRowRendererParams;

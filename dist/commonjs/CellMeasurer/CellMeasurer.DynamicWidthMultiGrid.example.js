@@ -192,13 +192,3 @@ var DynamicWidthMultiGrid =
   })(React.PureComponent);
 
 exports['default'] = DynamicWidthMultiGrid;
-DynamicWidthMultiGrid.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        getClassName: _propTypes['default'].func.isRequired,
-        getContent: _propTypes['default'].func.isRequired,
-        list: _propTypes['default'].instanceOf(_immutable['default'].List)
-          .isRequired,
-        width: _propTypes['default'].number.isRequired,
-      }
-    : {};

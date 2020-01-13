@@ -1104,27 +1104,6 @@ var MultiGrid =
   hideTopRightGridScrollbar: false,
   hideBottomLeftGridScrollbar: false,
 });
-MultiGrid.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        classNameBottomLeftGrid: _propTypes['default'].string.isRequired,
-        classNameBottomRightGrid: _propTypes['default'].string.isRequired,
-        classNameTopLeftGrid: _propTypes['default'].string.isRequired,
-        classNameTopRightGrid: _propTypes['default'].string.isRequired,
-        enableFixedColumnScroll: _propTypes['default'].bool.isRequired,
-        enableFixedRowScroll: _propTypes['default'].bool.isRequired,
-        fixedColumnCount: _propTypes['default'].number.isRequired,
-        fixedRowCount: _propTypes['default'].number.isRequired,
-        onScrollbarPresenceChange: _propTypes['default'].func,
-        style: _propTypes['default'].object.isRequired,
-        styleBottomLeftGrid: _propTypes['default'].object.isRequired,
-        styleBottomRightGrid: _propTypes['default'].object.isRequired,
-        styleTopLeftGrid: _propTypes['default'].object.isRequired,
-        styleTopRightGrid: _propTypes['default'].object.isRequired,
-        hideTopRightGridScrollbar: _propTypes['default'].bool,
-        hideBottomLeftGridScrollbar: _propTypes['default'].bool,
-      }
-    : {};
 (0, _reactLifecyclesCompat.polyfill)(MultiGrid);
 var _default = MultiGrid;
 exports['default'] = _default;

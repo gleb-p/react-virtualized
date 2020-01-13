@@ -257,44 +257,6 @@ exports['default'] = Collection;
   'aria-label': 'grid',
   cellGroupRenderer: defaultCellGroupRenderer,
 });
-Collection.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        'aria-label': _propTypes['default'].string,
-
-        /**
-         * Number of cells in Collection.
-         */
-        cellCount: _propTypes['default'].number.isRequired,
-
-        /**
-         * Responsible for rendering a group of cells given their indices.
-         * Should implement the following interface: ({
-         *   cellSizeAndPositionGetter:Function,
-         *   indices: Array<number>,
-         *   cellRenderer: Function
-         * }): Array<PropTypes.node>
-         */
-        cellGroupRenderer: _propTypes['default'].func.isRequired,
-
-        /**
-         * Responsible for rendering a cell given an row and column index.
-         * Should implement the following interface: ({ index: number, key: string, style: object }): PropTypes.element
-         */
-        cellRenderer: _propTypes['default'].func.isRequired,
-
-        /**
-         * Callback responsible for returning size and offset/position information for a given cell (index).
-         * ({ index: number }): { height: number, width: number, x: number, y: number }
-         */
-        cellSizeAndPositionGetter: _propTypes['default'].func.isRequired,
-
-        /**
-         * Optionally override the size of the sections a Collection's cells are split into.
-         */
-        sectionSize: _propTypes['default'].number,
-      }
-    : {};
 
 function defaultCellGroupRenderer(_ref4) {
   var cellCache = _ref4.cellCache,

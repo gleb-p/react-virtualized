@@ -1066,26 +1066,5 @@ _defineProperty(MultiGrid, 'defaultProps', {
   hideBottomLeftGridScrollbar: false,
 });
 
-MultiGrid.propTypes =
-  process.env.NODE_ENV !== 'production'
-    ? {
-        classNameBottomLeftGrid: PropTypes.string.isRequired,
-        classNameBottomRightGrid: PropTypes.string.isRequired,
-        classNameTopLeftGrid: PropTypes.string.isRequired,
-        classNameTopRightGrid: PropTypes.string.isRequired,
-        enableFixedColumnScroll: PropTypes.bool.isRequired,
-        enableFixedRowScroll: PropTypes.bool.isRequired,
-        fixedColumnCount: PropTypes.number.isRequired,
-        fixedRowCount: PropTypes.number.isRequired,
-        onScrollbarPresenceChange: PropTypes.func,
-        style: PropTypes.object.isRequired,
-        styleBottomLeftGrid: PropTypes.object.isRequired,
-        styleBottomRightGrid: PropTypes.object.isRequired,
-        styleTopLeftGrid: PropTypes.object.isRequired,
-        styleTopRightGrid: PropTypes.object.isRequired,
-        hideTopRightGridScrollbar: PropTypes.bool,
-        hideBottomLeftGridScrollbar: PropTypes.bool,
-      }
-    : {};
 polyfill(MultiGrid);
 export default MultiGrid;
